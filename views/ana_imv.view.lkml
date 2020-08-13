@@ -7,6 +7,22 @@ view: ana_imv {
     sql: ${TABLE}.Comunidad ;;
   }
 
+  dimension: comunidad_latitud {
+    type:  number
+    sql:  ${TABLE}.Comunidad_Latitud ;;
+  }
+
+  dimension: comunidad_longitud {
+    type:  number
+    sql:  ${TABLE}.Comunidad_Longitud ;;
+  }
+
+  dimension: comunidad_localizacion {
+    type: location
+    sql_latitude: ${comunidad_latitud} ;;
+    sql_longitude: ${comunidad_longitud} ;;
+  }
+
   dimension: habitantes {
     type: number
     sql: ${TABLE}.Habitantes ;;
