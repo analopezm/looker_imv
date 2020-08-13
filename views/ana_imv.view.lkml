@@ -39,6 +39,6 @@ view: ana_imv {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [habitantes,perceptores_totales_,porcentaje_afectados_erte,solicitudes, tasa_riesgo_pobreza]
   }
 }
