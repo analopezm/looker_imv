@@ -39,22 +39,27 @@ view: ana_imv {
 
   measure: average_habitantes {
     type: average
-    drill_fields: [habitantes]
+    sql: ${habitantes} ;;
+    value_format_name: decimal_0
   }
   measure: average_perceptores_totales {
     type: average
-    drill_fields: [perceptores_totales_]
+    sql:  ${perceptores_totales_} ;;
+    value_format_name: decimal_0
   }
   measure: average_porcentaje_afectados_erte {
     type: average
-    drill_fields: [porcentaje_afectados_erte]
+    sql:   ${porcentaje_afectados_erte};;
+    value_format_name: decimal_1
   }
   measure: average_solicitudes {
     type: average
-    drill_fields: [solicitudes]
+    sql:  ${solicitudes};;
+    value_format_name: decimal_0
   }
   measure: average_tasa_riesgo_pobreza {
     type: average
-    drill_fields: [tasa_riesgo_pobreza]
+    sql:  ${tasa_riesgo_pobreza} ;;
+    value_format_name: decimal_1
   }
 }
