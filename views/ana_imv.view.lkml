@@ -37,8 +37,24 @@ view: ana_imv {
     sql: ${TABLE}.Tasa_Riesgo_Pobreza ;;
   }
 
-  measure: count {
+  measure: count_habitantes {
     type: count
-    drill_fields: [habitantes,perceptores_totales_,porcentaje_afectados_erte,solicitudes, tasa_riesgo_pobreza]
+    drill_fields: [habitantes]
+  }
+  measure: count_perceptores_totales {
+    type: count
+    drill_fields: [perceptores_totales_]
+  }
+  measure: count_porcentaje_afectados_erte {
+    type: count
+    drill_fields: [porcentaje_afectados_erte]
+  }
+  measure: count_solicitudes {
+    type: count
+    drill_fields: [solicitudes]
+  }
+  measure: count_tasa_riesgo_pobreza {
+    type: count
+    drill_fields: [tasa_riesgo_pobreza]
   }
 }
