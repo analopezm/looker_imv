@@ -1,5 +1,5 @@
-view: predictions {
-  sql_table_name: `notebook-demo-283410.prediction_imv4_automl_model_2020_08_29T10_35_31_989Z.predictions`
+view: ana_imv_predictions {
+  sql_table_name: `notebook-demo-283410.ingresominimovital.ana_imv_predictions`
     ;;
 
   dimension: comunidad {
@@ -18,7 +18,7 @@ view: predictions {
   }
 
   dimension: predicted_imvperceptores {
-    type:  number
+    type: number
     sql: ${TABLE}.predicted_IMVPerceptores ;;
   }
 
@@ -45,7 +45,13 @@ view: predictions {
   measure: average_covidtasa_contagio {
     type: average
     sql: ${covidtasa_contagio} ;;
-    value_format_name: decimal_1
+    value_format_name: decimal_0
+  }
+
+  measure: average_indice_ibex35 {
+    type: average
+    sql: ${indice_ibex35} ;;
+    value_format_name: decimal_0
   }
 
   measure: average_predicted_imvperceptores {
@@ -60,39 +66,26 @@ view: predictions {
     value_format_name: decimal_0
   }
 
+  measure: average_tasa_empleo_financiero {
+    type: average
+    sql: ${tasa_empleo_financiero} ;;
+    value_format_name: decimal_0
+  }
+
+  measure: average_tasa_empleo_turismo {
+    type: average
+    sql: ${tasa_empleo_turismo} ;;
+    value_format_name: decimal_0
+  }
+
+  measure: average_tasa_empleo_industria {
+    type: average
+    sql: ${tasa_empleo_industria} ;;
+    value_format_name: decimal_0
+  }
+
   measure: count {
     type: count
     drill_fields: []
-  }
-}
-
-view: predictions__predicted_imvperceptores__tables__prediction_interval {
-  dimension: end {
-    type: number
-    sql: ${TABLE}.`end` ;;
-  }
-
-  dimension: start {
-    type: number
-    sql: ${TABLE}.start ;;
-  }
-}
-
-view: predictions__predicted_imvperceptores__tables {
-  dimension: prediction_interval {
-    hidden: yes
-    sql: ${TABLE}.prediction_interval ;;
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-  }
-}
-
-view: predictions__predicted_imvperceptores {
-  dimension: tables {
-    hidden: yes
-    sql: ${TABLE}.tables ;;
   }
 }
