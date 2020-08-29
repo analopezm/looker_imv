@@ -18,7 +18,6 @@ view: predictions {
   }
 
   dimension: predicted_imvperceptores {
-    hidden: no
     type:  number
     sql: ${TABLE}.predicted_IMVPerceptores ;;
   }
