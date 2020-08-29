@@ -11,6 +11,6 @@ datagroup: analopezm_imv_default_datagroup {
 persist_with: analopezm_imv_default_datagroup
 
 explore: ana_imv {}
+explore: predictions {}
 
 # explore: tabla_ingresominimovital {}
-
