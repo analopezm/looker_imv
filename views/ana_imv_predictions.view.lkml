@@ -84,6 +84,48 @@ view: ana_imv_predictions {
     value_format_name: decimal_0
   }
 
+  measure: total_covidtasa_contagio {
+    type: number
+    value_format_name: decimal_0
+    sql: ${covidtasa_contagio} ;;
+  }
+
+  measure: total_indice_ibex35 {
+    type: number
+    value_format_name: decimal_0
+    sql: ${indice_ibex35} ;;
+  }
+
+  measure: total_predicted_imvperceptores {
+    type: number
+    value_format_name: decimal_0
+    sql: ${predicted_imvperceptores} ;;
+  }
+
+  measure: total_tasa_empleo_agricultura {
+    type: number
+    value_format_name: decimal_0
+    sql: ${tasa_empleo_agricultura} ;;
+  }
+
+  measure: total_tasa_empleo_turismo {
+    type: number
+    value_format_name: decimal_0
+    sql: ${tasa_empleo_turismo} ;;
+  }
+
+  measure: total_tasa_empleo_financiero {
+    type: number
+    value_format_name: decimal_0
+    sql: ${tasa_empleo_financiero} ;;
+  }
+
+  measure: total_tasa_empleo_industria {
+    type: number
+    value_format_name: decimal_0
+    sql: ${tasa_empleo_industria} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
