@@ -13,33 +13,52 @@ view: predictions {
   }
 
   dimension: indice_ibex35 {
-    type: string
+    type: number
     sql: ${TABLE}.IndiceIBEX35 ;;
   }
 
   dimension: predicted_imvperceptores {
-    hidden: yes
+    hidden: no
+    type:  number
     sql: ${TABLE}.predicted_IMVPerceptores ;;
   }
 
   dimension: tasa_empleo_agricultura {
-    type: string
+    type: number
     sql: ${TABLE}.TasaEmpleoAgricultura ;;
   }
 
   dimension: tasa_empleo_financiero {
-    type: string
+    type: number
     sql: ${TABLE}.TasaEmpleoFinanciero ;;
   }
 
   dimension: tasa_empleo_industria {
-    type: string
+    type: number
     sql: ${TABLE}.TasaEmpleoIndustria ;;
   }
 
   dimension: tasa_empleo_turismo {
-    type: string
+    type: number
     sql: ${TABLE}.TasaEmpleoTurismo ;;
+  }
+
+  measure: average_covidtasa_contagio {
+    type: average
+    sql: ${covidtasa_contagio} ;;
+    value_format_name: decimal_1
+  }
+
+  measure: average_predicted_imvperceptores {
+    type: average
+    sql: ${predicted_imvperceptores} ;;
+    value_format_name: decimal_0
+  }
+
+  measure: average_tasa_empleo_agricultura {
+    type: average
+    sql: ${tasa_empleo_agricultura} ;;
+    value_format_name: decimal_0
   }
 
   measure: count {
